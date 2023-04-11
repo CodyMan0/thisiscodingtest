@@ -459,3 +459,13 @@ sys.stdin.readline().rstrip()
    1. factorial()
    2. math.sqrt()
    3. math.gcd() : 최대 공약수
+
+# 한 단계 깊은 내용
+
+1. 복사
+
+- [:]을 활용하자
+
+```python
+
+```

@@ -21,3 +21,9 @@ print("{0:=^10}".format("hi"))
 
 ## f 사용 
 print(f"I eat {3} apples")
+
+
+
+
+# 문자열 내장 함수
+
