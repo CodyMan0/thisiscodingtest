@@ -1,10 +1,3 @@
-# import sys
-
-# T = int(input())
-# for i in range(T):
-#     a,b = map(int,sys.stdin.readline().split())
-#     print(a+b)
-
-import sys
-a,b,c = map(int,sys.stdin.readline().split())
-print(a,b,c)
+n = int(input())
+for i in range(n , 0 , -1) :
+    print("*"*(i))
