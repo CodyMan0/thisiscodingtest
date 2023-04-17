@@ -511,3 +511,18 @@ data = [sys.stdin.readline().strip() for i in range(n)]
 ```python
 
 ```
+
+
+# 클래스 활용
+1. 기본적인 구조는 JS와 비슷하다.
+2. JS의 this가 python에서는 self 같다. 
+```python
+class Person:
+    def __init__(self,name):
+        self.name = name
+
+    def say_hello(self):
+        print("안녕! " + self.name + "이야")
+```
+3. js의 constructor 함수를 Python에서는 위의 예제와 같이 만드는구나! 이해!
+
