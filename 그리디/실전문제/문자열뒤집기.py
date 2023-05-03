@@ -1,3 +1,4 @@
+#1회
 # 전부 같도록 하고 싶다. 
 # 다솜이의 행동 연속된 하나 이상의 순자를 잡고 모두 뒤집는 것. 
 
@@ -34,4 +35,3 @@ for i in range(len(data)-1):
             count1 +=1
 
 print(min(count0,count1))
-
