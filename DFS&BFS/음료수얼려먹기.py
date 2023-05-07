@@ -36,8 +36,12 @@ result = 0
 
 for i in range(n) :
     for j in range(m):
+        print(n,m,dfs(i,j))
         if dfs(i,j) == True :
             print('세로',i ,'가로',j)
             result += 1
+
+print(graph)
+
 
 print(result)
