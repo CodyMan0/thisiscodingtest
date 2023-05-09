@@ -15,6 +15,7 @@ for _ in range(m) :
     a,b = map(int,input().split())
     graph[a].append(b)
 
+print('gg',graph)
 distance = [-1] * (n + 1)
 distance[x] = 0
 

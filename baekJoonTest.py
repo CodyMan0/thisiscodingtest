@@ -1,29 +1,5 @@
-from collections import deque
-
-def bfs(graph,start,visited):
-    queue = deque([start])
-    visited[start] = True
-    while queue:
-        v = queue.popleft()
-        print(v, end =' ')
-        for i in graph[v] :
-            if not visited[i] :
-                queue.append(i)
-                visited[i] = True
-
-
-graph = [
-    [],
-    [2,3,8],
-    [1,7],
-    [1,4,5],
-    [3,5],
-    [3,4],
-    [7],
-    [2,6,8],
-    [1,7]
-]
-
-visited = [False] * 9
-
-bfs(graph , 1 , visited)
+li = [int(input()) for _ in range(5)]
+if li[0] <= 0:
+    print(-li[0]*li[2] + li[3] + li[1]*li[4])
+else:
+    print((li[1]-li[0])*li[4])
