@@ -18,12 +18,14 @@ for i in range(n) :
         if graph[i][j] != 0: 
             data.append((graph[i][j],0,i,j))
 
+print(data)
+
 
 data.sort()
 q = deque(data)
 
 
-target_s , target_x , target_y = map(int,input().split())
+target_s , target_y , target_x = map(int,input().split())
 
 dx = [-1,0,1,0]
 dy = [0,1,0,-1]
@@ -41,5 +43,5 @@ while q :
                 graph[nx][ny] = virus
                 q.append((virus,s+1,nx,ny))
 
-print(graph[target_x -1][target_y -1])
+print(graph[target_y -1][target_x -1])
         
