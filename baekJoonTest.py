@@ -1,38 +1,44 @@
-n = int(input())
-graph = []
-num = []
 
-for i in range(n):
-    graph.append(list(map(int,input())))
+from collections import deque
 
 dx = [0,0,1,-1]
 dy = [1,-1,0,0]
 
-def dfs(x,y) :
-    if x < 0 or x >= n or y < 0 or y >= n:
-        return False
-    if graph[x][y] == 1 :
-        global count
-        count += 1
-        graph[x][y] = 0
+def bfs (graph, x, y):
+    n = len(graph)
+    q = deque()
+    q.append((x,y))
+    graph[x][y] = 0
+    cnt = 1
+
+    while q :
+        xx,yy = q.popleft()
         for i in range(4) :
-            nx = x + dx[i]
-            ny = y + dy[i]
-            dfs(nx,ny)
-        return True
-    return False
+            nx = xx + dx[i]
+            ny = yy + dy[i]
+            if 0 <= nx < n and 0 <= ny < n :
+                if graph[nx][ny] == 1 :
+                    graph[nx][ny] = 0 
+                    q.append((nx,ny))
+                    cnt += 1
+    return cnt
 
-count = 0
-result = 0
 
-for i in range(n):
+n  = int(input())
+graph = []
+
+for i in range(n) :
+    graph.append(list(map(int,input())))
+
+count = []
+
+for i in range(n) :
     for j in range(n):
-        if dfs(i,j) == True :
-            num.append(count)
-            result += 1
-            count = 0
+        if graph[i][j] == 1 :
+            count.append(bfs(graph,i,j))
 
-num.sort()
-print(result)
-for i in range(len(num)):
-    print(num[i])
+count.sort()
+
+print(len(count))
+for i in range(len(count)):
+    print(count[i])
