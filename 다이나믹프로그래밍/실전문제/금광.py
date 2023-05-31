@@ -10,7 +10,7 @@ for tc in range(int(input())) :
 
     dp = [ ]
     index = 0
-    for i in range(n):
+    for _ in range(n):
         dp.append(array[index : index + m])
         index += m
 
@@ -21,7 +21,7 @@ for tc in range(int(input())) :
                 
             else :
                 left_up = dp[i-1][j-1]
-                print('i',i,j)
+
             if i == n-1 :
                 left_down = 0
             else :
@@ -31,7 +31,7 @@ for tc in range(int(input())) :
     
     result = 0
     for i in range(n):
-        result = max(result, dp[i][m -1])
+        result = max(result, dp[i][m - 1])
     
     print('res',result)
 
