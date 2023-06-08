@@ -10,7 +10,7 @@ dp = [list(map(int,input().split())) for _ in range(n)]
 
 
 
-for i in range(1,n) : 
+for i in range(1,n):
     for j in range(i + 1) :
         print('i',i,'j',j)
         if j == 0 :
@@ -21,9 +21,9 @@ for i in range(1,n) :
             up = 0
         else :
             up = dp[i - 1][j]
+        dp[i][j] = dp[i][j] + max(up_left , up)
 
-        # dp[i][j] = dp[i][j] + dp[i-1][j]
-    # 자식노드와 손자 노드중 큰 수랑 더한 값을 비교하는 로직
+print(max(dp[n-1]))
 
 
 # 문제를 풀면서 해결하지 못한 부분
