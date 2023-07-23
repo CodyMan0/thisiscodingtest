@@ -9,4 +9,5 @@ for coin in coin_types:
     count += n // coin
     n %= coin
 
+
 print(count)
