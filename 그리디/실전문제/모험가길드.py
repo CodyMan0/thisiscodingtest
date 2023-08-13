@@ -4,16 +4,18 @@
 
 
 n = int(input())
-data = list(map(int,input().split()))
-data.sort()
+array = list(map(int,input().split()))
+array.sort()
 
 result = 0
 count = 0
 
-for i in data :
+print(array)
+for horror in array :
     count += 1
-    if count >= i :
+    if count >= horror :
         result += 1
         count =0
+    print(horror,result,count)
 
 print(result)

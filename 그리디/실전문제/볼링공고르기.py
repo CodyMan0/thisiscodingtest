@@ -25,15 +25,14 @@ weight = list(map(int,input().split()))
 array = [0] * 11
 
 for x in weight : 
+    print(x)
     array[x] += 1
 
 
 result = 0 
 
 for i in range(1, m+1) :
-    print(i,n)
     n = n - array[i]
-    print(i,n)
     result += array[i] * n
 
 print(result)

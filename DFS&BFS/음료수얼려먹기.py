@@ -47,52 +47,52 @@ print(graph)
 print(result)
 
 
-from collections import deque
+# from collections import deque
 
-n , m = map(int, input().split())
+# n , m = map(int, input().split())
 
 
-# 그래프 생성
-graph = []
-for i in range(n):
-    graph.append(list(map(int, input())))
+# # 그래프 생성
+# graph = []
+# for i in range(n):
+#     graph.append(list(map(int, input())))
 
-# 상하좌우 탐색 (북 , 남 , 동 , 서 )
-dx = [0, 0, 1, -1]
-dy = [1, -1, 0, 0]
+# # 상하좌우 탐색 (북 , 남 , 동 , 서 )
+# dx = [0, 0, 1, -1]
+# dy = [1, -1, 0, 0]
 
-# BFS가 우선 떠올랐다
-def bfs(x,y) : 
-    q = deque()
-    q.append((x,y))
+# # BFS가 우선 떠올랐다
+# def bfs(x,y) : 
+#     q = deque()
+#     q.append((x,y))
 
-    # 조건 
-    if graph[x][y] == 1 : 
-        return False
+#     # 조건 
+#     if graph[x][y] == 1 : 
+#         return False
 
-    while q : 
-        x,y = q.popleft()
-        graph[x][y] = 1
+#     while q : 
+#         x,y = q.popleft()
+#         graph[x][y] = 1
 
-        # 4방향 탐색
-        for i in range(4) :
-            nx = x + dx[i]
-            ny = y + dy[i]
+#         # 4방향 탐색
+#         for i in range(4) :
+#             nx = x + dx[i]
+#             ny = y + dy[i]
             
-            print('q',q)
-            # 지정된 얼음판 위치에 부합하면 큐에 넣는 로직
-            if 0 <= nx < n and 0 <= ny < m and graph[nx][ny] == 0 :
-                q.append((nx,ny))
+#             print('q',q)
+#             # 지정된 얼음판 위치에 부합하면 큐에 넣는 로직
+#             if 0 <= nx < n and 0 <= ny < m and graph[nx][ny] == 0 :
+#                 q.append((nx,ny))
             
-    return True
+#     return True
 
-cnt = 0
+# cnt = 0
 
-for i in range(n):
-    for j in range(m):
-        if bfs(i,j) == True : 
-            print(i,j)
-            cnt += 1
-            print(cnt)
+# for i in range(n):
+#     for j in range(m):
+#         if bfs(i,j) == True : 
+#             print(i,j)
+#             cnt += 1
+#             print(cnt)
 
-print(cnt)
+# print(cnt)
